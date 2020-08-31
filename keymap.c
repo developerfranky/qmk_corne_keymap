@@ -66,8 +66,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI,   LT(2,KC_SPC),  LCTL_T(KC_BSPC),     RALT_T(KC_DEL),  LT(1,KC_ENT),  KC_GRV \
                                       //`--------------------------'  `--------------------------'
+
   ),
-  [_SYMBOLS] = LAYOUT_split_3x6_3( \
+
+  [_LOWER] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_GRV,    KC_EXLM,    KC_AT,    KC_HASH,    KC_DLR,    KC_PERC,                         KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LBRC,    KC_RBRC, KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -78,7 +80,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           KC_LGUI,   KC_SPC,  LCTL_T(KC_BSPC),     RALT_T(KC_DEL),   KC_ENT, KC_GRV \
                                       //`--------------------------'  `--------------------------'
     ),
-  [_COMMANDS] = LAYOUT_split_3x6_3( \
+
+  [_RAISE] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC, LGUI(KC_GRV),   LCTL(KC_LALT), LGUI(KC_LALT),  ANY(SGUI(LCTL(KC_4))), ANY(LCTL(LGUI(KC_3))),                      LGUI(KC_LBRC), LGUI(KC_RBRC), KC_UP, ANY(LSFT(LGUI(KC_LBRC))), ANY(LSFT(LGUI(KC_RBRC))), KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -88,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_LGUI,   KC_SPC,  LCTL_T(KC_BSPC),     RALT_T(KC_DEL),   KC_ENT, KC_GRV \
                                       //`--------------------------'  `--------------------------'
-  ),
+  )
 };
 
 int RGB_current_mode;
