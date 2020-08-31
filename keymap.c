@@ -56,7 +56,7 @@ enum macro_keycodes {
 #define KC_ALTKN ALT_T(KC_LANG1)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_QWERTY] = LAYOUT_split_3x6_3( \
+  [_QWERTY] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -69,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
 
-  [_LOWER] = LAYOUT_split_3x6_3( \
+  [_LOWER] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_GRV,    KC_EXLM,    KC_AT,    KC_HASH,    KC_DLR,    KC_PERC,                         KC_CIRC,    KC_AMPR,    KC_ASTR,    KC_LBRC,    KC_RBRC, KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -81,11 +81,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
     ),
 
-  [_RAISE] = LAYOUT_split_3x6_3( \
+  [_RAISE] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_ESC, LGUI(KC_GRV),   LCTL(KC_LALT), LGUI(KC_LALT),  ANY(SGUI(LCTL(KC_4))), ANY(LCTL(LGUI(KC_3))),                      LGUI(KC_LBRC), LGUI(KC_RBRC), KC_UP, ANY(LSFT(LGUI(KC_LBRC))), ANY(LSFT(LGUI(KC_RBRC))), KC_BSLS,\
+       KC_ESC, LGUI(KC_GRV),   LCTL(KC_LALT), LGUI(KC_LALT),SGUI(KC_3),SGUI(KC_4),    LGUI(KC_LBRC), LGUI(KC_RBRC), KC_UP, SGUI(KC_LBRC),SGUI(KC_RBRC), KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TAB, LSFT(KC_LCTL), LGUI(KC_LCTL), LSFT(KC_LALT), LSFT(KC_LGUI), KC_NO,                      KC_NO,  KC_LEFT, KC_DOWN, KC_RGHT, ANY(LSFT(LGUI(KC_L))),  KC_QUOT,\
+      KC_TAB, LSFT(KC_LCTL), LGUI(KC_LCTL), LSFT(KC_LALT), LSFT(KC_LGUI), KC_NO,                      KC_NO,  KC_LEFT, KC_DOWN, KC_RGHT, SGUI(KC_L),  KC_QUOT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSPO, LGUI(KC_Z), LGUI(KC_X), LGUI(KC_C), LGUI(KC_V), RESET,                      KC_NO, KC_NO, KC_NO, KC_NO, LGUI(KC_SLSH), KC_RSPC,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -228,3 +228,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
+
